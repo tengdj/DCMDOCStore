@@ -1,0 +1,119 @@
+mkdir -p /shared/mongodb/data/db/dicom/dicom1/
+mkdir -p /shared/mongodb/data/db/dicom/dicom2/
+mkdir -p /shared/mongodb/data/db/dicom/dicom3/
+mkdir -p /shared/mongodb/data/db/dicom/dicom4/
+mkdir -p /shared/mongodb/data/db/dicom/dicom5/
+mkdir -p /shared/mongodb/data/db/dicom/dicom6/
+mkdir -p /shared/mongodb/data/db/dicom/dicom7/
+mkdir -p /shared/mongodb/data/db/dicom/dicom8/
+mkdir -p /shared/mongodb/data/db/dicom/dicom9/
+mkdir -p /shared/mongodb/data/db/dicom/dicom10/
+mkdir -p /shared/mongodb/data/db/dicom/dicom11/
+mkdir -p /shared/mongodb/data/db/dicom/dicom12/
+mkdir -p /shared/mongodb/data/db/dicom/dicom13/
+mkdir -p /shared/mongodb/data/db/dicom/dicom14/
+mkdir -p /shared/mongodb/data/db/dicom/dicom15/
+
+mkdir -p /shared/mongodb/data/db/dicom/config1/
+mkdir -p /shared/mongodb/data/db/dicom/config2/
+
+numactl --interleave=all /shared/mongodb/bin/mongod -shardsvr -replSet dicom1 -port 27001 -dbpath /shared/mongodb/data/db/dicom/dicom1 -oplogSize 1000 -logpath /shared/mongodb/data/log/dicom1.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /shared/mongodb/bin/mongod -shardsvr -replSet dicom2 -port 27002 -dbpath /shared/mongodb/data/db/dicom/dicom2 -oplogSize 1000 -logpath /shared/mongodb/data/log/dicom2.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /shared/mongodb/bin/mongod -shardsvr -replSet dicom3 -port 27003 -dbpath /shared/mongodb/data/db/dicom/dicom3 -oplogSize 1000 -logpath /shared/mongodb/data/log/dicom3.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /shared/mongodb/bin/mongod -shardsvr -replSet dicom4 -port 27004 -dbpath /shared/mongodb/data/db/dicom/dicom4 -oplogSize 1000 -logpath /shared/mongodb/data/log/dicom4.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /shared/mongodb/bin/mongod -shardsvr -replSet dicom5 -port 27005 -dbpath /shared/mongodb/data/db/dicom/dicom5 -oplogSize 1000 -logpath /shared/mongodb/data/log/dicom5.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /shared/mongodb/bin/mongod -shardsvr -replSet dicom6 -port 27006 -dbpath /shared/mongodb/data/db/dicom/dicom6 -oplogSize 1000 -logpath /shared/mongodb/data/log/dicom6.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /shared/mongodb/bin/mongod -shardsvr -replSet dicom7 -port 27007 -dbpath /shared/mongodb/data/db/dicom/dicom7 -oplogSize 1000 -logpath /shared/mongodb/data/log/dicom7.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /shared/mongodb/bin/mongod -shardsvr -replSet dicom8 -port 27008 -dbpath /shared/mongodb/data/db/dicom/dicom8 -oplogSize 1000 -logpath /shared/mongodb/data/log/dicom8.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /shared/mongodb/bin/mongod -shardsvr -replSet dicom9 -port 27009 -dbpath /shared/mongodb/data/db/dicom/dicom9 -oplogSize 1000 -logpath /shared/mongodb/data/log/dicom9.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /shared/mongodb/bin/mongod -shardsvr -replSet dicom10 -port 27010 -dbpath /shared/mongodb/data/db/dicom/dicom10 -oplogSize 1000 -logpath /shared/mongodb/data/log/dicom10.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /shared/mongodb/bin/mongod -shardsvr -replSet dicom11 -port 27011 -dbpath /shared/mongodb/data/db/dicom/dicom11 -oplogSize 1000 -logpath /shared/mongodb/data/log/dicom11.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /shared/mongodb/bin/mongod -shardsvr -replSet dicom12 -port 27012 -dbpath /shared/mongodb/data/db/dicom/dicom12 -oplogSize 1000 -logpath /shared/mongodb/data/log/dicom12.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /shared/mongodb/bin/mongod -shardsvr -replSet dicom13 -port 27013 -dbpath /shared/mongodb/data/db/dicom/dicom13 -oplogSize 1000 -logpath /shared/mongodb/data/log/dicom13.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /shared/mongodb/bin/mongod -shardsvr -replSet dicom14 -port 27014 -dbpath /shared/mongodb/data/db/dicom/dicom14 -oplogSize 1000 -logpath /shared/mongodb/data/log/dicom14.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /shared/mongodb/bin/mongod -shardsvr -replSet dicom15 -port 27015 -dbpath /shared/mongodb/data/db/dicom/dicom15 -oplogSize 1000 -logpath /shared/mongodb/data/log/dicom15.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+
+numactl --interleave=all /shared/mongodb/bin/mongod -configsvr -port 27020 -dbpath /shared/mongodb/data/db/dicom/config1 -logpath /shared/mongodb/data/log/config1.log -logappend --directoryperdb --fork
+numactl --interleave=all /shared/mongodb/bin/mongod -configsvr -port 27021 -dbpath /shared/mongodb/data/db/dicom/config2 -logpath /shared/mongodb/data/log/config2.log -logappend --directoryperdb --fork
+
+/shared/mongodb/bin/mongos --configdb node40.clus.cci.emory.edu:27020,node40.clus.cci.emory.edu:27021,node41.clus.cci.emory.edu:27020 --port 27031 --chunkSize 256 --logpath /shared/mongodb/data/log/mongos.log --logappend --fork
+
+
+
+mkdir -p /db/mongodb/data/db/dicom/dicom16/
+mkdir -p /db/mongodb/data/db/dicom/dicom17/
+mkdir -p /db/mongodb/data/db/dicom/dicom18/
+mkdir -p /db/mongodb/data/db/dicom/dicom19/
+mkdir -p /db/mongodb/data/db/dicom/dicom20/
+mkdir -p /db/mongodb/data/db/dicom/dicom21/
+mkdir -p /db/mongodb/data/db/dicom/dicom22/
+mkdir -p /db/mongodb/data/db/dicom/dicom23/
+mkdir -p /db/mongodb/data/db/dicom/dicom24/
+mkdir -p /db/mongodb/data/db/dicom/dicom25/
+mkdir -p /db/mongodb/data/db/dicom/dicom26/
+mkdir -p /db/mongodb/data/db/dicom/dicom27/
+mkdir -p /db/mongodb/data/db/dicom/dicom28/
+mkdir -p /db/mongodb/data/db/dicom/dicom29/
+mkdir -p /db/mongodb/data/db/dicom/dicom30/
+
+mkdir -p /db/mongodb/data/db/dicom/config3/
+
+numactl --interleave=all /db/mongodb/bin/mongod -shardsvr -replSet dicom16 -port 27001 -dbpath /db/mongodb/data/db/dicom/dicom16 -oplogSize 1000 -logpath /db/mongodb/data/log/dicom16.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /db/mongodb/bin/mongod -shardsvr -replSet dicom17 -port 27002 -dbpath /db/mongodb/data/db/dicom/dicom17 -oplogSize 1000 -logpath /db/mongodb/data/log/dicom17.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /db/mongodb/bin/mongod -shardsvr -replSet dicom18 -port 27003 -dbpath /db/mongodb/data/db/dicom/dicom18 -oplogSize 1000 -logpath /db/mongodb/data/log/dicom18.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /db/mongodb/bin/mongod -shardsvr -replSet dicom19 -port 27004 -dbpath /db/mongodb/data/db/dicom/dicom19 -oplogSize 1000 -logpath /db/mongodb/data/log/dicom19.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /db/mongodb/bin/mongod -shardsvr -replSet dicom20 -port 27005 -dbpath /db/mongodb/data/db/dicom/dicom20 -oplogSize 1000 -logpath /db/mongodb/data/log/dicom20.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /db/mongodb/bin/mongod -shardsvr -replSet dicom21 -port 27006 -dbpath /db/mongodb/data/db/dicom/dicom21 -oplogSize 1000 -logpath /db/mongodb/data/log/dicom21.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /db/mongodb/bin/mongod -shardsvr -replSet dicom22 -port 27007 -dbpath /db/mongodb/data/db/dicom/dicom22 -oplogSize 1000 -logpath /db/mongodb/data/log/dicom22.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /db/mongodb/bin/mongod -shardsvr -replSet dicom23 -port 27008 -dbpath /db/mongodb/data/db/dicom/dicom23 -oplogSize 1000 -logpath /db/mongodb/data/log/dicom23.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /db/mongodb/bin/mongod -shardsvr -replSet dicom24 -port 27009 -dbpath /db/mongodb/data/db/dicom/dicom24 -oplogSize 1000 -logpath /db/mongodb/data/log/dicom24.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /db/mongodb/bin/mongod -shardsvr -replSet dicom25 -port 27010 -dbpath /db/mongodb/data/db/dicom/dicom25 -oplogSize 1000 -logpath /db/mongodb/data/log/dicom25.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /db/mongodb/bin/mongod -shardsvr -replSet dicom26 -port 27011 -dbpath /db/mongodb/data/db/dicom/dicom26 -oplogSize 1000 -logpath /db/mongodb/data/log/dicom26.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /db/mongodb/bin/mongod -shardsvr -replSet dicom27 -port 27012 -dbpath /db/mongodb/data/db/dicom/dicom27 -oplogSize 1000 -logpath /db/mongodb/data/log/dicom27.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /db/mongodb/bin/mongod -shardsvr -replSet dicom28 -port 27013 -dbpath /db/mongodb/data/db/dicom/dicom28 -oplogSize 1000 -logpath /db/mongodb/data/log/dicom28.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /db/mongodb/bin/mongod -shardsvr -replSet dicom29 -port 27014 -dbpath /db/mongodb/data/db/dicom/dicom29 -oplogSize 1000 -logpath /db/mongodb/data/log/dicom29.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+numactl --interleave=all /db/mongodb/bin/mongod -shardsvr -replSet dicom30 -port 27015 -dbpath /db/mongodb/data/db/dicom/dicom30 -oplogSize 1000 -logpath /db/mongodb/data/log/dicom30.log -logappend  --maxConns 10000 --quiet --directoryperdb --fork
+
+numactl --interleave=all /db/mongodb/bin/mongod -configsvr -port 27020 -dbpath /db/mongodb/data/db/dicom/config3 -logpath /db/mongodb/data/log/config3.log -logappend --directoryperdb --fork
+
+
+
+db.runCommand({addshard:'dicom1/node40.clus.cci.emory.edu:27001',maxsize:0})
+db.runCommand({addshard:'dicom2/node40.clus.cci.emory.edu:27002',maxsize:0})
+db.runCommand({addshard:'dicom3/node40.clus.cci.emory.edu:27003',maxsize:0})
+db.runCommand({addshard:'dicom4/node40.clus.cci.emory.edu:27004',maxsize:0})
+db.runCommand({addshard:'dicom5/node40.clus.cci.emory.edu:27005',maxsize:0})
+db.runCommand({addshard:'dicom6/node40.clus.cci.emory.edu:27006',maxsize:0})
+db.runCommand({addshard:'dicom7/node40.clus.cci.emory.edu:27007',maxsize:0})
+db.runCommand({addshard:'dicom8/node40.clus.cci.emory.edu:27008',maxsize:0})
+db.runCommand({addshard:'dicom9/node40.clus.cci.emory.edu:27009',maxsize:0})
+db.runCommand({addshard:'dicom10/node40.clus.cci.emory.edu:27010',maxsize:0})
+db.runCommand({addshard:'dicom11/node40.clus.cci.emory.edu:27011',maxsize:0})
+db.runCommand({addshard:'dicom12/node40.clus.cci.emory.edu:27012',maxsize:0})
+db.runCommand({addshard:'dicom13/node40.clus.cci.emory.edu:27013',maxsize:0})
+db.runCommand({addshard:'dicom14/node40.clus.cci.emory.edu:27014',maxsize:0})
+db.runCommand({addshard:'dicom15/node40.clus.cci.emory.edu:27015',maxsize:0})
+
+db.runCommand({addshard:'dicom16/node41.clus.cci.emory.edu:27001',maxsize:0})
+db.runCommand({addshard:'dicom17/node41.clus.cci.emory.edu:27002',maxsize:0})
+db.runCommand({addshard:'dicom18/node41.clus.cci.emory.edu:27003',maxsize:0})
+db.runCommand({addshard:'dicom19/node41.clus.cci.emory.edu:27004',maxsize:0})
+db.runCommand({addshard:'dicom20/node41.clus.cci.emory.edu:27005',maxsize:0})
+db.runCommand({addshard:'dicom21/node41.clus.cci.emory.edu:27006',maxsize:0})
+db.runCommand({addshard:'dicom22/node41.clus.cci.emory.edu:27007',maxsize:0})
+db.runCommand({addshard:'dicom23/node41.clus.cci.emory.edu:27008',maxsize:0})
+db.runCommand({addshard:'dicom24/node41.clus.cci.emory.edu:27009',maxsize:0})
+db.runCommand({addshard:'dicom25/node41.clus.cci.emory.edu:27010',maxsize:0})
+db.runCommand({addshard:'dicom26/node41.clus.cci.emory.edu:27011',maxsize:0})
+db.runCommand({addshard:'dicom27/node41.clus.cci.emory.edu:27012',maxsize:0})
+db.runCommand({addshard:'dicom28/node41.clus.cci.emory.edu:27013',maxsize:0})
+db.runCommand({addshard:'dicom29/node41.clus.cci.emory.edu:27014',maxsize:0})
+db.runCommand({addshard:'dicom30/node41.clus.cci.emory.edu:27015',maxsize:0})
+
+/db/mongodb/bin/mongos --configdb node40.clus.cci.emory.edu:27020,node40.clus.cci.emory.edu:27021,node41.clus.cci.emory.edu:27020 --port 27031 --chunkSize 256 --logpath /db/mongodb/data/log/mongos.log --logappend --fork
+
+
+db.runCommand({enablesharding:'dicomdb'}) 
+db.runCommand({shardcollection:'dicomdb.fs.chunks', key:{files_id:1}}) 
+db.runCommand({shardcollection:'dicomdb.dicom', key:{files_id:1}}) 
+db.runCommand({shardcollection:'dicomdb.fs.files', key:{_id:1}})
